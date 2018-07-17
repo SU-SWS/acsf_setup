@@ -12,5 +12,11 @@ export ACSF_USERNAME="<Your ACSF Username>"
 export ACSF_API_KEY="<yourapikey>"
 ```
 4. Run `source ~/.bash_env`. (You only need to do this the first time.)
-5. Run `cd acsf_setup`.
-6. Run `./acsf_setup.sh` and follow the prompts.
+
+# Use
+1. Run `cd acsf_setup`.
+2. Run `./acsf_setup.sh` and follow the prompts.
+
+## Notes and Caveats
+1. You must have drush aliases for ACSF set up.
+2. You must have drush in your `$PATH`. Run `which drush` and it should return the location of drush.
