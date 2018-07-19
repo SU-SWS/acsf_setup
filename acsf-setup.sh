@@ -6,7 +6,7 @@ read -p "Enter the \"Website address\" from the SNOW request (e.g., \"appliedmet
 read -p "Enter the \"Website Title\" from the SNOW request (e.g., \"Department of Applied Metaphysics\"): " sitetitle
 read -p "Enter the requester's SUNetID (e.g., \"ahislop\"): " sunetid
 read -p "Enter the requester's Full Name from the SNOW request (e.g., \"Alyssa Hislop\"): " fullname
-read -p "Enter the numeric site_id that was returned from the Acquia API (e.g., \"1081\"): " siteid
+read -p "Enter the numeric site_id that was returned from the Acquia API in the RIT (e.g., \"1081\"): " siteid
 read -p "Did the requester specify an additional owner? (Y/N): " additionalowner
 if test $additionalowner = Y; then
   read -p "Enter the addtional owner's SUNetID (e.g., \"jbickar\"): " additionalownersunetid
@@ -43,7 +43,8 @@ if test $ready = Y; then
       drush @acsf.cardinald7.$sitename -y si stanford
     fi
 
-    drush @acsf.cardinald7.$sitename ssp-au $sunetid --name="$fullname"
+    # Add the requester as an administrator.
+    drush @acsf.cardinald7.$sitename ssp-au $sunetid --name="$fullname" --roles="administrator"
     drush @acsf.cardinald7.$sitename -y vset site_name "$sitetitle"
     # Add an ACSF API call to create the custom domain. Use environment variables to authenticate against the API.
       curl "https://www.cardinalsites.acsitefactory.com/api/v1/domains/$siteid/add" \
