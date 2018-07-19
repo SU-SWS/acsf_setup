@@ -2,7 +2,7 @@
 echo "$ACSF_USERNAME"
 echo $ACSF_API_KEY
 read -p "Is this site for a student group? (Y/N): " studentgroup
-read -p "Enter the site's short name (e.g., \"appliedmetaphysics\"): " sitename
+read -p "Enter the \"Website address\" from the SNOW request (e.g., \"appliedmetaphysics\"): " sitename
 read -p "Enter the \"Website Title\" from the SNOW request (e.g., \"Department of Applied Metaphysics\"): " sitetitle
 read -p "Enter the requester's SUNetID (e.g., \"ahislop\"): " sunetid
 read -p "Enter the requester's Full Name from the SNOW request (e.g., \"Alyssa Hislop\"): " fullname
