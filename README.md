@@ -14,8 +14,8 @@ export ACSF_API_KEY="<yourapikey>"
 4. Run `source ~/.bash_env`. (You only need to do this the first time.)
 
 # Use
-1. Run `cd acsf_setup`.
-2. Run `./acsf_setup.sh` and follow the prompts.
+1. Run `cd acsf-setup`.
+2. Run `./acsf-setup.sh` and follow the prompts.
 
 ## Notes and Caveats
 1. You must have drush aliases for ACSF set up.
