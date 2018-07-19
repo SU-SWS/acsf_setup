@@ -51,6 +51,11 @@ if test $ready = Y; then
     -d '{"domain_name": "'$sitename'.sites.stanford.edu" }' \
     -v -u "$ACSF_USERNAME":"$ACSF_API_KEY"
 
+    # Clear site caches.
+    curl "https://www.cardinalsites.acsitefactory.com/api/v1/sites/$siteid/cache-clear" \
+    -X POST -H 'Content-Type: application/json' \
+    -v -u "$ACSF_USERNAME":"$ACSF_API_KEY"
+
     if test $additionalowner = Y; then
       drush @acsf.cardinald7.$sitename ssp-au $additionalownersunetid --name="$additionalownerfullname"
     fi
@@ -65,7 +70,3 @@ fi
 printf "\n"
 echo "Site setup complete. Go to https://$sitename.sites.stanford.edu to verify setup."
 printf "\n"
-
-
-
-
