@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "$ACSF_USERNAME"
-echo $ACSF_API_KEY
 read -p "Is this site for a student group? (Y/N): " studentgroup
 read -p "Enter the \"Website address\" from the SNOW request (e.g., \"appliedmetaphysics\"): " sitename
 read -p "Enter the \"Website Title\" from the SNOW request (e.g., \"Department of Applied Metaphysics\"): " sitetitle
