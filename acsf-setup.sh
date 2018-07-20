@@ -45,7 +45,10 @@ if test $ready = Y; then
 
     # Add the requester as an administrator.
     drush @acsf.cardinald7.$sitename ssp-au $sunetid --name="$fullname" --roles="administrator"
+    # Set site title.
     drush @acsf.cardinald7.$sitename -y vset site_name "$sitetitle"
+    # Set site email to user's email address.
+    drush @acsf.cardinald7.$sitename -y vset site_mail "$sunetid@stanford.edu"
     # Add an ACSF API call to create the custom domain. Use environment variables to authenticate against the API.
       curl "https://www.cardinalsites.acsitefactory.com/api/v1/domains/$siteid/add" \
     -X POST -H 'Content-Type: application/json' \
