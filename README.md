@@ -5,13 +5,13 @@ This is a script to perform the manual tasks that SWS team members must to to fi
 
 ## Initial configuration
 1. Log into the ACSF dashboard and [go to your user account](https://www.cardinalsites.acsitefactory.com/user). Click the "API key" tab to get your API key.
-2. If a `~/.bash_env` file does not exist, create one.
-3. Add the following lines to your `~/.bash_env` file:
+2. If a `~/.bash_profile` file does not exist, create one.
+3. Add the following lines to your `~/.bash_profile` file:
 ```
 export ACSF_USERNAME="<Your ACSF Username>"
 export ACSF_API_KEY="<yourapikey>"
 ```
-4. Run `source ~/.bash_env`. (You only need to do this the first time.)
+4. Run `source ~/.bash_profile`. (You only need to do this the first time.)
 
 # Use
 1. Run `cd acsf-setup`.
