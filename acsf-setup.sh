@@ -1,11 +1,11 @@
 #!/bin/bash
 read -p "Is this site for a student group? (Y/N): " studentgroup
-read -p "Enter the \"Website address\" from the SNOW request (e.g., \"appliedmetaphysics\"): " sitename
-read -p "Enter the \"Website Title\" from the SNOW request (e.g., \"Department of Applied Metaphysics\"): " sitetitle
-read -p "Enter the requester's SUNetID (e.g., \"ahislop\"): " sunetid
-read -p "Enter the requester's Full Name from the SNOW request (e.g., \"Alyssa Hislop\"): " fullname
-read -p "Enter the numeric site_id that was returned from the Acquia API in the RIT (e.g., \"1081\"): " siteid
-read -p "Did the requester specify an additional owner? (Y/N): " additionalowner
+read -p "Enter the \"Website address\" from the SNOW request (e.g., \"appliedmetaphysics\"; no quotes): " sitename
+read -p "Enter the \"Website Title\" from the SNOW request (e.g., \"Department of Applied Metaphysics\"; no quotes): " sitetitle
+read -p "Enter the requester's SUNetID (e.g., \"ahislop\"; no quotes): " sunetid
+read -p "Enter the requester's Full Name from the SNOW request (e.g., \"Alyssa Hislop\"; no quotes): " fullname
+read -p "Enter the numeric site_id that was returned from the Acquia API in the RIT (e.g., \"1081\"; no quotes): " siteid
+read -p "Did the requester specify an additional owner? (Y/N; case-sensitive): " additionalowner
 if test $additionalowner = Y; then
   read -p "Enter the addtional owner's SUNetID (e.g., \"jbickar\"): " additionalownersunetid
   read -p "Enter the additional owner's Full Name from the SNOW request (e.g., \"John Bickar\"): " additionalownerfullname
@@ -71,4 +71,6 @@ else
 fi
 printf "\n"
 echo "Site setup complete. Go to https://$sitename.sites.stanford.edu to verify setup."
+printf "\n"
+echo "Wait 3-8 minutes for SAML authentication to work."
 printf "\n"
