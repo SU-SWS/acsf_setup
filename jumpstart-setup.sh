@@ -33,8 +33,10 @@ read -p "Are you ready to proceed? (Y/N): " ready
 if test $ready = Y; then
   read -p "There is no undo. Are you sure you are ready to proceed? (Y/N): " reallyready
   if test $reallyready = Y; then
-    drush @acsf.cardinald7.$sitename -y si $product
-
+    # Install the site.
+    drush @acsf.cardinald7.$sitename -y si $product --account-mail="sws-developers@lists.stanford.edu"
+    # Disable the update module.
+    drush @acsf.cardinald7.$sitename -y dis update
     # Add the requester as an administrator.
     drush @acsf.cardinald7.$sitename ssp-au $sunetid --name="$fullname" --roles="administrator"
     # Set site title.
