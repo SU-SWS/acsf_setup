@@ -1,5 +1,5 @@
 # ACSF Setup
-This is a script to perform the manual tasks that SWS team members must to to finalize setup of a new group/department site on Stanford Sites 2.0 (ACSF). We hope that this does not have a very long lifespan.
+This is a script to perform the manual tasks that SWS team members must use to finalize setup of a new group/department site on Stanford Sites 2.0 (ACSF). We hope that this does not have a very long lifespan.
 
 **Version 0.x**
 
