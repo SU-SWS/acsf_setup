@@ -4,7 +4,7 @@ read -p "Enter the \"Website address\" from the SNOW request (e.g., \"appliedmet
 read -p "Enter the \"Website Title\" from the SNOW request (e.g., \"Department of Applied Metaphysics\"; no quotes): " sitetitle
 read -p "Enter the requester's SUNetID (e.g., \"ahislop\"; no quotes): " sunetid
 read -p "Enter the requester's Full Name from the SNOW request (e.g., \"Alyssa Hislop\"; no quotes): " fullname
-read -p "Enter the numeric site_id that was returned from the Acquia API in the RIT (e.g., \"1081\"; no quotes): " siteid
+# read -p "Enter the numeric site_id that was returned from the Acquia API in the RIT (e.g., \"1081\"; no quotes): " siteid
 read -p "Did the requester specify an additional owner? (Y/N; case-sensitive): " additionalowner
 if test $additionalowner = Y; then
   read -p "Enter the addtional owner's SUNetID (e.g., \"jbickar\"): " additionalownersunetid
@@ -47,20 +47,26 @@ if test $ready = Y; then
     drush @acsf.cardinald7.$sitename -y vset site_name "$sitetitle"
     # Set site email to user's email address.
     drush @acsf.cardinald7.$sitename -y vset site_mail "$sunetid@stanford.edu"
-    # Add an ACSF API call to create the custom domain. Use environment variables to authenticate against the API.
-      curl "https://www.cardinalsites.acsitefactory.com/api/v1/domains/$siteid/add" \
-    -X POST -H 'Content-Type: application/json' \
-    -d '{"domain_name": "'$sitename'.sites.stanford.edu" }' \
-    -v -u "$ACSF_USERNAME":"$ACSF_API_KEY"
-
-    # Clear site caches.
-    curl "https://www.cardinalsites.acsitefactory.com/api/v1/sites/$siteid/cache-clear" \
-    -X POST -H 'Content-Type: application/json' \
-    -v -u "$ACSF_USERNAME":"$ACSF_API_KEY"
-
     if test $additionalowner = Y; then
       drush @acsf.cardinald7.$sitename ssp-au $additionalownersunetid --name="$additionalownerfullname"
     fi
+    # Clear caches.
+    drush @acsf.cardinald7.$sitename cc all
+
+    # Add an ACSF API call to create the custom domain. Use environment variables to authenticate against the API.
+    # No longer necessary per https://insight.acquia.com/support/tickets/715265
+    # curl "https://www.cardinalsites.acsitefactory.com/api/v1/domains/$siteid/add" \
+    # -X POST -H 'Content-Type: application/json' \
+    # -d '{"domain_name": "'$sitename'.sites.stanford.edu" }' \
+    # -v -u "$ACSF_USERNAME":"$ACSF_API_KEY"
+
+    # Clear site caches.
+    # Commenting this out for now to see if "drush cc all" is sufficient. Digging the site_id out of the
+    # RITM is a pain.
+    # curl "https://www.cardinalsites.acsitefactory.com/api/v1/sites/$siteid/cache-clear" \
+    # -X POST -H 'Content-Type: application/json' \
+    # -v -u "$ACSF_USERNAME":"$ACSF_API_KEY"
+
   # Not really ready.
   else
     echo "Aborting. Run away!"
