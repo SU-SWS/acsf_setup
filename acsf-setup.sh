@@ -66,6 +66,11 @@ if test $ready = Y; then
     # curl "https://www.cardinalsites.acsitefactory.com/api/v1/sites/$siteid/cache-clear" \
     # -X POST -H 'Content-Type: application/json' \
     # -v -u "$ACSF_USERNAME":"$ACSF_API_KEY"
+    printf "\n"
+    echo "Site setup complete. Go to https://$sitename.sites.stanford.edu to verify setup."
+    printf "\n"
+    echo "Wait 3-8 minutes for SAML authentication to work."
+    printf "\n"
 
   # Not really ready.
   else
@@ -75,8 +80,3 @@ if test $ready = Y; then
 else
   echo "Aborting. Run away!"
 fi
-printf "\n"
-echo "Site setup complete. Go to https://$sitename.sites.stanford.edu to verify setup."
-printf "\n"
-echo "Wait 3-8 minutes for SAML authentication to work."
-printf "\n"
