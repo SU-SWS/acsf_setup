@@ -19,7 +19,7 @@ echo "The site's short name is: "$sitename
 echo "The site's title is: "$sitetitle
 echo "The requester's SUNetID is: "$sunetid
 echo "The requester's Full Name is: "$fullname
-echo "The product is is: "$product
+echo "The product is: "$product
 if test $additionalowner = Y; then
   echo "The additional owner's SUNetID is: "$additionalownersunetid
   echo "The additional owner's Full Name is: "$additionalownerfullname
