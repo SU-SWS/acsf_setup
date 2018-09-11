@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "Is this site for a student group? (Y/N): " studentgroup
+read -p "Is this site for an academic or other authorized department? (I.e., should it get the Stanford Framework theme?) (Y/N): " depttheme
 read -p "Enter the \"Website address\" from the SNOW request (e.g., \"appliedmetaphysics\"; no quotes): " sitename
 read -p "Enter the \"Website Title\" from the SNOW request (e.g., \"Department of Applied Metaphysics\"; no quotes): " sitetitle
 read -p "Enter the requester's SUNetID (e.g., \"ahislop\"; no quotes): " sunetid
@@ -15,10 +15,10 @@ fi
 printf "\n"
 printf "\n"
 echo "########################"
-if test $studentgroup = Y; then
-  echo "This site is for a student group and will get the \"Stanford Light\" theme"
+if test $depttheme = N; then
+  echo "This site is NOT for an academic or other authorized department and will get the \"Stanford Light\" theme"
 else
-  echo "This site is NOT for a student group and will get the \"Stanford Framework\" theme"
+  echo "This site is for an academic or other authorized department and will get the \"Stanford Framework\" theme"
 fi
 echo "The site's short name is: "$sitename
 echo "The site's title is: "$sitetitle
@@ -37,7 +37,7 @@ read -p "Are you ready to proceed? (Y/N): " ready
 if test $ready = Y; then
   read -p "There is no undo. Are you sure you are ready to proceed? (Y/N): " reallyready
   if test $reallyready = Y; then
-    if test $studentgroup = Y; then
+    if test $depttheme = N; then
       drush @acsf.cardinald7.$sitename -y si stanford
     fi
 
