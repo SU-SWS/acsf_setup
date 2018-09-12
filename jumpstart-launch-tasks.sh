@@ -15,7 +15,7 @@ drush @acsf.cardinald7.$sitename -y vset --always-set preprocess_css 1
 drush @acsf.cardinald7.$sitename -y vset --always-set preprocess_js 1
 drush @acsf.cardinald7.$sitename -y vset --always-set page_compression 1
 drush @acsf.cardinald7.$sitename -y vset --always-set redirect_auto_redirect 1
-drush @acsf.cardinald7.$sitename -y dis stanford_metatag_nobots context_http_header context_useragent nobots
+drush @acsf.cardinald7.$sitename -y dis stanford_metatag_nobots nobots 
 drush @acsf.cardinald7.$sitename upwd Howard --password="$howardpass"
 drush @acsf.cardinald7.$sitename upwd Lindsey --password="$lindseypass"
 drush @acsf.cardinald7.$sitename upwd admin --password="$adminpass"
