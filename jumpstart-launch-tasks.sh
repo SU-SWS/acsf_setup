@@ -8,7 +8,7 @@ adminpass="cat /dev/urandom | tr -cd a-zA-Z0-9_+=*\ | fold -w18 | head -n 1"
 drush @acsf.cardinald7.$sitename -y en googleanalytics site_verify xmlsitemap xmlsitemap_menu xmlsitemap_engines
 drush @acsf.cardinald7.$sitename -y vset --always-set block_cache 1
 drush @acsf.cardinald7.$sitename -y vset --always-set cache 1
-drush @acsf.cardinald7.$sitename -y vset --always-set cache_lifetime 21600
+drush @acsf.cardinald7.$sitename -y vset --always-set cache_lifetime 0
 drush @acsf.cardinald7.$sitename -y vset --always-set features_rebuild_on_flush FALSE
 drush @acsf.cardinald7.$sitename -y vset --always-set page_cache_maximum_age 21600
 drush @acsf.cardinald7.$sitename -y vset --always-set preprocess_css 1
