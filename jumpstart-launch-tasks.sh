@@ -13,7 +13,7 @@ drush @acsf.cardinald7.$sitename -y vset --always-set features_rebuild_on_flush 
 drush @acsf.cardinald7.$sitename -y vset --always-set page_cache_maximum_age 21600
 drush @acsf.cardinald7.$sitename -y vset --always-set preprocess_css 1
 drush @acsf.cardinald7.$sitename -y vset --always-set preprocess_js 1
-drush @acsf.cardinald7.$sitename -y vset --always-set page_compression 1
+drush @acsf.cardinald7.$sitename -y vset --always-set page_compression 0
 drush @acsf.cardinald7.$sitename -y vset --always-set redirect_auto_redirect 1
 drush @acsf.cardinald7.$sitename -y dis stanford_metatag_nobots nobots 
 drush @acsf.cardinald7.$sitename upwd Howard --password="$howardpass"
