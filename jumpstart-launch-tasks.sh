@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Prerequisite:
+# 1. SSH Access to ACSF environment configured.
+# 2. Drush aliases set up (Drush <=8) https://github.com/SU-SWS/acsf-cardinald7/blob/1.x/drush/site-aliases/acsf.aliases.drushrc.php
+# We don't have aliases configured for Drush 9 yet.
+
 # Default stack.
 stack='cardinald7'
 
