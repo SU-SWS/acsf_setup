@@ -14,8 +14,29 @@ export ACSF_API_KEY="<yourapikey>"
 4. Run `source ~/.bash_profile`. (You only need to do this the first time.)
 
 # Use
+
+## Group and Department Site Setup on ACSF ("cardinald7" stack)
 1. Run `cd acsf-setup`.
 2. Run `./acsf-setup.sh` and follow the prompts.
+
+## Personal Setup on ACSF ("leland" stack)
+1. Run `./acsf-people-setup.sh` and follow the prompts.
+
+## Jumpstart Site Setup
+1. Run `./jumpstart-setup.sh` and follow the prompts.
+
+## Launch Tasks
+1. Run `./jumpstart-launch-tasks.sh`
+
+## NetDB Setup
+This script will create a node in NetDB for a custom hostname (vhost) on ACSF.
+1. Run `./netdb.sh`
+
+## Setting Up the Custom Domain on ACSF
+This script will add the hostname created with `netdb.sh` to ACSF. 
+You **must** wait until after the DNS push due to a bug (https://stanfordits.atlassian.net/browse/SITES-911)
+1. Run `./custom-domain.sh`
+
 
 ## Notes and Caveats
 1. You must have drush aliases for ACSF set up.
