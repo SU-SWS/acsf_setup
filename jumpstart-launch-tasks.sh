@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "What is the site shortname on ACSF (e.g., \"jumpstartlockss\", no quotes)" sitename
+read -p "Enter the site shortname on ACSF (e.g., \"jumpstartlockss\", no quotes): " sitename
 # Baby, what time is it?
 timestamp=$(date +%Y%m%d%H%M%S)
 howardpass="cat /dev/urandom | tr -cd a-zA-Z0-9_+=*\ | fold -w18 | head -n 1"
