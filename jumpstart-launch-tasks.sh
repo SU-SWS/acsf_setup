@@ -19,7 +19,7 @@ drush @acsf.cardinald7.$sitename -y vset --always-set redirect_auto_redirect 1
 drush @acsf.cardinald7.$sitename -y dis stanford_metatag_nobots nobots
 drush @acsf.cardinald7.$sitename upwd Howard --password="$howardpass"
 drush @acsf.cardinald7.$sitename upwd Lindsey --password="$lindseypass"
-if [ -n "`drush sqlq 'SELECT * FROM users where name = "Richard"'`" ]; then
+if [ -n "`drush @acsf.cardinald7.$sitename sqlq 'SELECT * FROM users where name = "Richard"'`" ]; then
   drush @acsf.cardinald7.$sitename upwd Richard --password="$richardpass"
 fi
 drush @acsf.cardinald7.$sitename upwd admin --password="$adminpass"
