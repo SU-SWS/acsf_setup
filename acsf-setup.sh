@@ -1,9 +1,8 @@
 #!/bin/bash
-read -p "Is this site for an academic or other authorized department? (I.e., should it get the Stanford Framework theme?) (Y/N): " depttheme
-read -p "Enter the \"Website address\" from the SNOW request (e.g., \"appliedmetaphysics\"; no quotes): " sitename
-read -p "Enter the \"Website Title\" from the SNOW request (e.g., \"Department of Applied Metaphysics\"; no quotes): " sitetitle
 read -p "Enter the requester's SUNetID (e.g., \"ahislop\"; no quotes): " sunetid
 read -p "Enter the requester's Full Name from the SNOW request (e.g., \"Alyssa Hislop\"; no quotes): " fullname
+read -p "Enter the \"Website Title\" from the SNOW request (e.g., \"Department of Applied Metaphysics\"; no quotes): " sitetitle
+read -p "Enter the \"Website address\" from the SNOW request (e.g., \"appliedmetaphysics\"; no quotes): " sitename
 # read -p "Enter the numeric site_id that was returned from the Acquia API in the RIT (e.g., \"1081\"; no quotes): " siteid
 read -p "Did the requester specify an additional owner? (Y/N; case-sensitive): " additionalowner
 if test $additionalowner = Y; then
@@ -15,11 +14,6 @@ fi
 printf "\n"
 printf "\n"
 echo "########################"
-if test $depttheme = N; then
-  echo "This site is NOT for an academic or other authorized department and will get the \"Stanford Light\" theme"
-else
-  echo "This site is for an academic or other authorized department and will get the \"Stanford Framework\" theme"
-fi
 echo "The site's short name is: "$sitename
 echo "The site's title is: "$sitetitle
 echo "The requester's SUNetID is: "$sunetid
@@ -37,9 +31,6 @@ read -p "Are you ready to proceed? (Y/N): " ready
 if test $ready = Y; then
   read -p "There is no undo. Are you sure you are ready to proceed? (Y/N): " reallyready
   if test $reallyready = Y; then
-    if test $depttheme = N; then
-      drush @acsf.cardinald7.$sitename -y si stanford
-    fi
 
     # Add the requester as an administrator.
     drush @acsf.cardinald7.$sitename ssp-au $sunetid --name="$fullname" --roles="administrator"
