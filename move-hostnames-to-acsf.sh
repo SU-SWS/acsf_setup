@@ -13,9 +13,7 @@ while read acsfshortname hostname; do
   printf "\n"
   echo "The file we are using is "$hostnames
   printf "\n"
-  printf "\n"
   echo "The vhost we are moving is "$hostname
-  printf "\n"
   printf "\n"
   echo "The short name of the site on ACSF is "$acsfshortname
   netdb node alias --remove $hostname sites-lb
