@@ -29,13 +29,25 @@ export ACSF_API_KEY="<yourapikey>"
 1. Run `./jumpstart-launch-tasks.sh`
 
 ## Setting Up the Custom Domain on ACSF
-This script will add the hostname created with `netdb.sh` to ACSF. 
+This script will add the hostname created with `netdb.sh` to ACSF.
 Run this prior to running the netdb script as adding the entry to netdb is "going live". You can do this far in advance of netdb.
 1. Run `./custom-domain.sh`
 
 ## NetDB Setup
 This script will create a node in NetDB for a custom hostname (vhost) on ACSF.
 1. Run `./netdb.sh`
+
+## Submitting a Sitemap to Google
+This script will:
+1. Enable `xmlsitemap`, `xmlsitemap_engines`, and `xmlsitemap_menu`
+2. Add the links from the Main Menu to the XML sitemap
+3. Submit the XML sitemap to Google for indexing
+
+Use:
+1. Run `./google.sh`
+
+## Clearing Varnish Cache
+1. Run `./clear-varnish-cache.sh`
 
 ## Notes and Caveats
 1. You must have drush aliases for ACSF set up.
