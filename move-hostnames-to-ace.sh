@@ -9,7 +9,7 @@ if [ ! -f $hostnames ]; then
   echo "You didn't provide a valid hostnames file"
 fi
 
-while read aceshortname; do
+while read hostname; do
   printf "\n" >> move-hostnames-to-ace.log
   echo "The file we are using is "$hostnames >> move-hostnames-to-ace.log
   printf "\n" >> move-hostnames-to-ace.log
