@@ -45,7 +45,7 @@ $ ./jumpstart-setup.sh
 Enter the "Website address" from the SNOW request (e.g., "appliedmetaphysics"; no quotes): udl
 Enter the "Website Title" from the SNOW request (e.g., "Department of Applied Metaphysics"; no quotes): Universal Design for Learning
 Enter the requester's SUNetID (e.g., "ahislop"; no quotes): izaks
-Enter the requester's Full Name from the SNOW request (e.g., "Alyssa Hislop"; no quotes): Irina Zacks
+Enter the requester's Full Name from the SNOW request (e.g., "Alyssa Hislop"; no quotes): Irina Zaks
 Enter the machine name of the product you would like to install (e.g., "stanford_sites_jumpstart", "stanford_sites_jumpstart_plus", "stanford_sites_jumpstart_academic", "stanford_sites_jumpstart_lab"; no quotes): stanford_sites_jumpstart_vpsa
 Did the requester specify an additional owner? (Y/N; case-sensitive): N
 
@@ -54,7 +54,7 @@ Did the requester specify an additional owner? (Y/N; case-sensitive): N
 The site's short name is: udl
 The site's title is: Universal Design for Learning
 The requester's SUNetID is: izaks
-The requester's Full Name is: Irina Zacks
+The requester's Full Name is: Irina Zaks
 The product is: stanford_sites_jumpstart_vpsa
 There are no additional owners.
 ########################
