@@ -87,7 +87,9 @@ Use:
 1. Run `./google.sh`
 
 ## Clearing Varnish Cache
-1. Run `./clear-varnish-cache.sh`
+1. Run `./clear-varnish-cache-api.sh`
+
+**Note**: This will clear Drupal caches and Varnish caches for the _entire site_.
 
 ## Notes and Caveats
 1. You must have drush aliases for ACSF set up.
