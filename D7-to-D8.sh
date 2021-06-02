@@ -21,6 +21,10 @@ curl "https://www.cardinalsites.acsitefactory.com/api/v1/sites/$acsfd8siteid/cac
 -X POST -H 'Content-Type: application/json' \
 -v -u "$ACSF_USERNAME":"$ACSF_API_KEY" &
 
+curl "https://www.cardinalsites.acsitefactory.com/api/v1/sites/$acsfd7siteid/cache-clear" \
+-X POST -H 'Content-Type: application/json' \
+-v -u "$ACSF_USERNAME":"$ACSF_API_KEY" &
+
 printf "\n"
 echo "Done."
 printf "\n"
