@@ -2,3 +2,4 @@ hostnames*
 *.log
 *.bak
 *canonical-url*.sh
+.idea
