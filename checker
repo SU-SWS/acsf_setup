@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SITES=(15706 10356 25786 24991 10131 23501 23281 23251 25611 23816 10206 22576 9946 10196 25081 22001 23416 17671 15291 15831 17786 21681 18931 19816 19811 19821 19831 19836 19826 19841 21811 21451 22206 24661) 
+
+for i in "${SITES[@]}"
+do
+   : 
+   SHORTNAME=$(curl "https://www.cardinalsites.acsitefactory.com//api/v1/sites/$i" \
+            -X GET -H 'Content-Type: application/json' \
+            -v -u "Marc Young":657e4cb3b550174849a33c0df92b303c061237a1)
+   echo "$i: $SHORTNAME" >> /tmp/sites.txt
+   sleep 100
+done
